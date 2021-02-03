@@ -7,9 +7,9 @@ burpsuite插件：主动和被动进行JS扫描
 + 排除各种JS库，只分析自定义JS，有效发现目标
 + 具体可利用点的分析，例如ajax语法等
 + 考虑将扫描到的自定义JS文件自动添加到自带字典中，逐步完善字典
-+ 关于解析JS，参考https://github.com/Threezh1/JSFinder的实现，基于一个大正则
++ 关于解析JS，参考`https://github.com/Threezh1/JSFinder`的实现，基于一个大正则
 ## 简单使用方式
-- 主动扫描功能输入JS路径就可以开始（https://www.xxx.com/static/js/），相当于一个简化版的intruder
+- 主动扫描功能输入JS路径就可以开始（`https://www.xxx.com/static/js/`），相当于一个简化版的intruder
 - 被动扫描勾选后就开始了，不用管它，正常使用Burp即可，会自动收集JS路径
 ### 开发者
 - 小迪安全团队（许少，人走茶凉）
