@@ -1,7 +1,7 @@
 package listener;
 
 import burp.*;
-import common.PrintUtil;
+import common.Constants;
 import ui.TestUI;
 
 import java.io.OutputStream;
@@ -24,20 +24,19 @@ public class HttpListener implements IHttpListener {
     @Override
     public void processHttpMessage(int toolFlag, boolean messageIsRequest, IHttpRequestResponse messageInfo) {
         if (messageIsRequest) {
-            //GET
             IHttpService httpService = messageInfo.getHttpService();
             IRequestInfo requestInfo = helpers.analyzeRequest(httpService, messageInfo.getRequest());
             if (Objects.equals(requestInfo.getMethod(), "GET")) {
                 String url = requestInfo.getUrl().toString();
                     if (url.endsWith("js")) {
-//                    PrintUtil.print(callbacks, "##############"+url);
+                        for(String item: Constants.jsLibs){
+                            if(url.toLowerCase().contains(item)){
+                                return;
+                            }
+                        }
                     TestUI.setAutoText(url);
                 }
             }
-//            PrintUtil.print(callbacks, helpers.bytesToString(messageInfo.getRequest()));
-        } else {
-//            IResponseInfo responseInfo = helpers.analyzeResponse(messageInfo.getResponse());
-//            PrintUtil.print(callbacks, helpers.bytesToString(messageInfo.getResponse()));
         }
     }
 }

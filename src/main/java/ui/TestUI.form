@@ -25,7 +25,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value=""/>
+              <text value="https://www.xxx.com/static/js/"/>
             </properties>
           </component>
           <component id="dc45a" class="javax.swing.JLabel">

@@ -112,7 +112,7 @@ public class TestUI {
         child.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.add(child, new GridConstraints(0, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, new Dimension(558, 34), null, 0, false));
         inputUrl = new JTextField();
-        inputUrl.setText("");
+        inputUrl.setText("https://www.xxx.com/static/js/");
         child.add(inputUrl, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setText("Please Input JS URL:");
@@ -168,8 +168,7 @@ public class TestUI {
      * @noinspection ALL
      */
     public JComponent $$$getRootComponent$$$() {
-        progress.setValue(0);
-        progressLabel.setText("0/0");
         return mainPanel;
     }
+
 }
